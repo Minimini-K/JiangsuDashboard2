@@ -2,17 +2,6 @@
 <html lang="en">
 <meta name="viewport" content="width = device-width, initial-scale=1.0">
 <head>
-    <!-- Hotjar Tracking Code for https://minimini-k.github.io/jiangsudashboardall3d/ -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2457595,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Jiangsu Dashboard</title>
     <!--    <script type="text/javascript">response.addHeader("Access-Control-Allow-Origin", "http://129.187.45.33/");</script>-->
@@ -36,10 +25,10 @@
     <script src="data/city_geocenter.js"></script>
 
     <style>
-        html {
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
+        /*html {*/
+        /*    overflow-x: hidden;*/
+        /*    overflow-y: hidden;*/
+        /*}*/
 
         body {
             margin-left: 10px;
@@ -90,9 +79,10 @@
         /*input[type="button"] {*/
         .button3D {
             /*border: 1px solid #0f988e;*/
-            border: 1px solid #985a0f;
+            border: 1px solid #ffffff;
             /*letter-spacing: 1px;*/
             padding: 0px 2px;
+
             text-align: center;
             /*width: 100px;*/
             display: block;
@@ -112,10 +102,10 @@
             top: 2px;
             /*transform: translateX(50%);*/
             position: relative;
-            box-shadow: inset 0 30px 30px -15px rgba(255, 255, 255, .1), inset 0 0 0 1px rgba(255, 255, 255, .3), inset 0 1px 20px rgba(0, 0, 0, 0), 0 3px 0 #985a0f, 0 3px 2px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .1), 0 10px 20px rgba(0, 0, 0, .1);
-            background: #ec7d1a;
-            color: white;
-            /*text-shadow: 0 1px 0 rgba(0, 0, 0, .3);*/
+            /*box-shadow: inset 0 30px 30px -15px rgba(255, 255, 255, .1), inset 0 0 0 1px rgba(255, 255, 255, .3), inset 0 1px 20px rgba(0, 0, 0, 0), 0 3px 0 #ffffff, 0 3px 2px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .1), 0 10px 20px rgba(0, 0, 0, .1);*/
+            background: #ffffff;
+            /*color: white;*/
+
             transition: 150ms all;
             -webkit-transition: 150ms all;
             -moz-transition: 150ms all;
@@ -125,12 +115,20 @@
 
         }
 
-        .button3D:active {
-            transform: translateY(3px);
-            box-shadow: inset 0 16px 2px -15px rgba(0, 0, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, .15), inset 0 1px 20px rgba(0, 0, 0, .1), 0 0 0 #985a0f, 0 0 0 2px rgba(255, 255, 255, .5), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+        .text3D {
+            color: #696969;
+            text-shadow: 0.5px 0.5px 1px #919191, 0.7px 0.7px 1px #919191;
         }
 
-        /*input[type="button"]:active {*/
+
+        .button3D:active {
+            transform: translateY(3px);
+        }
+
+        /* box-shadow: inset 0 16px 2px -15px rgb(255, 255, 255), inset 0 0 0 1px rgb(255, 255, 255), inset 0 1px 20px rgb(255, 255, 255), 0 0 0 #ffffff, 0 0 0 2px rgba(255, 255, 255, .5), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+     }
+
+     /*input[type="button"]:active {*/
 
 
         /*input[type="button"][disabled] {*/
@@ -161,52 +159,60 @@
             <div style="height:104px;background-color: #ffffff;border: 1px solid #DCDCDC;">
 
 
-                    <button class="button3D" style="padding:0px 5px;margin-top:8px;margin-left: 16px;height:40px;font-size: 28px">Industial Innovation Environment</button>
+                <button class="button3D text3D"
+                        style="color:#454545;padding:0px 5px;margin-top:8px;margin-left: 16px;height:40px;font-size: 28px">Industial
+                    Innovation Environment
+                </button>
 
-<!--                <p style="margin-left: 16px;margin-top: 12px;font-size: 28px;font-weight: bold; letter-spacing:0px;">-->
-<!--                    Industial Innovation Environment </p>-->
-                <p style="margin-left: 18px;margin-top: 10px;font-size: 15px; letter-spacing:0px;">
+                <!--                <p style="margin-left: 16px;margin-top: 12px;font-size: 28px;font-weight: bold; letter-spacing:0px;">-->
+                <!--                    Industial Innovation Environment </p>-->
+                <p style="margin-left: 22px;margin-top: 6px;font-size: 15px; letter-spacing:0px;">
                     Data source: Jiangsu, China, 2018</p>
-                <p style="margin-left: 18px;margin-top: -10px;font-size: 15px; letter-spacing:0px;">
+                <p style="margin-left: 22px;margin-top: -10px;font-size: 15px; letter-spacing:0px;">
                     Provided by: Chair of Cartography, Technical University of Munich</p>
 
             </div>
         </div>
         <div class="col-md-2">
             <div style="height:104px;margin-left:-20px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-                <div class="buttonContainer">
-                    <button class="button3D">Category Selection</button>
+                <div class="buttonContainer" style="height:18px">
+                    <button class="button3D text3D" style="font-size: 14px;color:#454545;">Category Selection</button>
                 </div>
                 <p class="blockTitle"></p>
                 <div class="form-check" style="margin-top: -2px;margin-left: 10px">
                     <input class="form-check-input" type="radio" name="radios" id="radios1" value="enco" checked>
                     <label class="form-check-label" for="radios1"
-                           style="font-weight:bold;height: 25px;width: 90px">
-                        <button class="button3D" id="cateEnco">Economy</button>
+                           style="height: 25px;width: 85px">
+                        <button class="button3D text3D" id="cateEnco" style="font-size: 15px;font-weight:normal;">
+                            Economy
+                        </button>
                     </label>
                     <input class="form-check-input" type="radio" name="radios" id="radios2" value="soci">
-                    <label class="form-check-label" for="radios2"
-                           style="color:#696969;font-weight:bold;">
-                        <button class="button3D" id="cateInha">Inhabitance</button>
+                    <label class="form-check-label" for="radios2">
+                        <button class="button3D text3D" id="cateInha" style="font-size: 15px;font-weight:normal;">
+                            Inhabitance
+                        </button>
                     </label>
                 </div>
                 <div class="form-check" style="margin-left: 10px">
                     <input class="form-check-input" type="radio" name="radios" id="radios3" value="envi">
-                    <label class="form-check-label" for="radios3"
-                           style="color:#696969;font-weight:bold;">
-                        <button class="button3D" id="cateInfr">Infrastructure</button>
+                    <label class="form-check-label" for="radios3">
+                        <button class="button3D text3D" id="cateInfr" style="font-size: 15px;font-weight:normal;">
+                            Infrastructure
+                        </button>
                     </label>
                     <input class="form-check-input" type="radio" name="radios" id="radios4" value="tech">
-                    <label class="form-check-label" for="radios4" style="color:#696969;font-weight:bold;">
-                        <button class="button3D" id="cateRD">R&D</button>
+                    <label class="form-check-label" for="radios4">
+                        <button class="button3D text3D" id="cateRD" style="font-size: 15px;font-weight:normal;">R&D
+                        </button>
                     </label>
                 </div>
             </div>
         </div>
         <div class="col-md-5">
             <div style="height:104px;margin-left:-20px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-                <div class="buttonContainer">
-                    <button class="button3D">City Selection</button>
+                <div class="buttonContainer" style="height:18px">
+                    <button class="button3D text3D" style="font-size: 14px;color:#454545;">City Selection</button>
                 </div>
                 <p class="blockTitle"></p>
                 <div id="cityGroup">
@@ -218,8 +224,9 @@
     <div class="row">
         <div class="col-md-5">
             <div style="height:595px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-                <div class="buttonContainer">
-                    <button class="button3D">Industrial Innovation Environemnt Map</button>
+                <div class="buttonContainer" style="height:18px">
+                    <button class="button3D text3D" style="font-size: 14px;color:#454545;">Industrial Innovation Environemnt Map
+                    </button>
                 </div>
                 <p class="blockTitle"></p>
                 <div id='map' style="margin-left:10px;width: 95%;height:550px;"></div>
@@ -230,19 +237,21 @@
             <div class="row" style="margin-top:0px;margin-right: 0px;">
                 <div class="col-md-5">
                     <div style="margin-left:-20px;margin-right:30px;height:360px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-
-                        <div class="buttonContainer">
-                            <button class="button3D">Value of <span id="cate1"></span> Factors in Jiangsu</button>
+                        <div class="buttonContainer" style="height:18px">
+                            <button class="button3D text3D" style="font-size: 14px;color:#454545;">Value of <span id="cate1"></span>
+                                Factors in Jiangsu
+                            </button>
                         </div>
-
                         <p class="blockTitle"></p>
                         <div id="valueGroup"></div>
                     </div>
                 </div>
                 <div class="col-md-7">
                     <div style="margin-left:-50px;margin-right:-15px;height:360px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-                        <div class="buttonContainer">
-                            <button class="button3D">Correlation of <span id="cate2"></span> Factors in Jiangsu</button>
+                        <div class="buttonContainer" style="height:18px">
+                            <button class="button3D text3D" style="font-size: 14px;color:#454545;">Correlation of <span
+                                    id="cate2"></span> Factors in Jiangsu
+                            </button>
                         </div>
                         <p class="blockTitle"></p>
                         <div>
@@ -255,8 +264,10 @@
             <div class="row" style="margin-top:10px;margin-right: 0px;">
                 <div class="col-md-12">
                     <div style="margin-left:-20px;margin-right:-20px;height:225px;background-color: #ffffff;border: 1px solid #DCDCDC;">
-                        <div class="buttonContainer">
-                            <button class="button3D">Value of <span id="cate3"></span> Factors in Jiangsu Cities</button>
+                        <div class="buttonContainer" style="height:18px">
+                            <button class="button3D text3D" style="font-size: 14px;color:#454545;">Value of <span id="cate3"></span>
+                                Factors in Jiangsu Cities
+                            </button>
                         </div>
                         <p class="blockTitle"></p>
                         <div id="pc" class="parcoords" style="margin-top:5px;margin-left:10px;width:97%;height:185px">
