@@ -197,6 +197,8 @@ $('body').on('click', '.namebt', function () {
     else if (valueName == "Number of granted patent")
         alert("Inventions with granted patents mean a person cannot manufacture for profit-making, use, import, sell, or distribute the products or processes without consent from the patent owner.")
 })
+
+
 // ------------------------------ update dashboard according to category and city-----------------------------------------------
 $("input[id=radios1]").click(function () {
     temp = 0;
