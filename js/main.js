@@ -21,8 +21,8 @@ function addCities(originalCities) {
     createDiv1.className = "form-check";
     label1.id = "city13";
     label1.className = "form-check-label text3D";
-    button1.className = "button3D text3D"
-    button1.innerText = "All";
+    label1.innerText = "All"
+    button1.className = "button3D"
     button1.value = "1";
     button1.id = "city13bt"
     button1.type = "city"
@@ -32,15 +32,15 @@ function addCities(originalCities) {
     input1.type = "checkbox";
     input1.id = "all"
     createDiv1.style = "position: absolute; left:0px;top:30px";
-    label1.style = 'font-weight: normal;font-size:13px'
-    button1.style = 'position: relative;top:-23px;left: 20px;font-weight: normal;font-size:13px;height:19px'
+    label1.style = 'font-weight: normal;font-size:14px;position: relative;left:8px;color:#696969'
+    button1.style = 'position: relative;top:-23px;left: 20px;font-size:11px;height:19px'
     input1.style = 'position: relative;left:5px;top:0px;color:#696969;'
     document.getElementById('cityGroup').appendChild(createDiv1);
     document.getElementById(createDiv1.id).appendChild(input1);
-    document.getElementById(createDiv1.id).appendChild(button1);
+    document.getElementById(createDiv1.id).appendChild(label1);
     // document.getElementById(createDiv1.id).appendChild(button1);
     // document.getElementById(button1.id).appendChild(input1);
-   // document.getElementById(button1.id).appendChild(label1);
+    //document.getElementById(button1.id).appendChild(label1);
     // document.getElementById(label1.id).appendChild(button1)
     for (var i = 1; i < originalCities.length + 1; i++) {
         // var createDiv1 = document.createElement("div");
@@ -60,9 +60,9 @@ function addCities(originalCities) {
         button.className = "button3D text3D"
         button.id = "city" + (i - 1).toString() + "bt";
         button.name = "citybt";
+        button.value = "1";
         button.style = 'position: relative;font-size:11px;'
         button.innerText = originalCities[i - 1];
-        button.value = "1";
         // lable2.id = "city" + i.toString();
         // lable2.className = "cityName"
         input.className = "form-check-input";
@@ -70,13 +70,13 @@ function addCities(originalCities) {
         input.name = 'city';
         input.type = "checkbox";
         createDiv.style = "position: absolute; left:" + ((i % 5) * 103).toString() + "px;top:" + (Math.floor(i / 5) * 23 + 30).toString() + "px";
-        label.style = 'font-weight: normal;font-size:13px'
+        label.style = 'font-weight: normal;font-size:14px;position: absolute;top:-1px;left: 20px;color:#696969'
         input.style = 'position: absolute;top:-1px;left:5px;color:#696969;'
-        button.style = ' font-weight: normal;font-size:13px;position: absolute;top:-1px;left: 20px;height:19px'
+        button.style = 'font-weight: normal;font-size:14px;position: absolute;top:-1px;left: 20px;height:19px'
         // lable2.innerText = originalCities[i];
         document.getElementById('cityGroup').appendChild(createDiv);
         document.getElementById(createDiv.id).appendChild(input);
-        document.getElementById(createDiv.id).appendChild(button);
+        document.getElementById(createDiv.id).appendChild(label);
         //document.getElementById(button.id).appendChild(label)
         // document.getElementById('cityGroup').appendChild(createDiv);
         // document.getElementById(createDiv.id).appendChild(button);
@@ -87,14 +87,17 @@ function addCities(originalCities) {
 
 }
 
+
 // ------------------------------ Jiangsu Values -----------------------------------------------
 function updateValues(cate) {
     document.getElementById('valueGroup').innerHTML = "";
     d3.csv("data/" + cate + "-jiangsu.csv", function (error, csvdata) {
         for (i = 0; i < 6; i++) {
+            console.log(csvdata[i].name)
             var createDiv1 = document.createElement("div");
             //var createDiv2 = document.createElement("div");
             var lable1 = document.createElement("label");
+            var lable4 = document.createElement("label");
             var lable2 = document.createElement("p");
             var lable3 = document.createElement("p");
             var button = document.createElement("button")
@@ -104,29 +107,41 @@ function updateValues(cate) {
             lable1.className = "text3D"
             lable2.id = "value" + i.toString();
             lable3.id = "unit" + i.toString();
+            lable4.id = "name1" + i.toString();
             button.id = "name" + i.toString() + "bt";
             button.className = "button3D namebt text3D";
-            button.innerText = csvdata[i].name;;
             createDiv1.style = "border:1.5px solid  #C0C0C0;width:83%; height: 40px;position: absolute; left: 6px;top:" + (Math.floor(i * 54 + 40)).toString() + "px";
             //createDiv2.style = " border:1.5px solid  #C0C0C0;width:90%;height:40px;margin-top:10px;"
-            //lable1.style = " font-size:12px;background: white;position: relative; top:-13px;left: 5px;color:#454545;font-weight:bold;"
-            // lable1.style = " font-size:12px;background: white;position: relative; top:-13px;right: 5px;color:#454545;font-weight:bold;"
-            button.style = " font-size:14px; font-weight:normal;position: relative; top:-12px;left:-5px;height:20px"
-            lable2.style = "font-size:18px;margin-top:-8px;margin-left:40%;font-weight:bold;color:#696969;"
-            lable3.style = "font-size:13px;margin-top:-30px;margin-right:3px;color:#696969;text-align: right;"
-            lable1.style = "font-size:14px; font-weight:normal;"
-            //lable1.innerHTML = csvdata[i].name;
+            //lable4.style = " font-size:12px;background: white;position: relative; top:-13px;left: 5px;color:#454545;font-weight:bold;"
+            lable4.style = " font-size:14px;background: white;position: relative; top:-13px;left: -2px;color:#696969;font-weight:normal;"
+            button.style = " font-size:14px;position: relative; top:-12px;left:-5px;font-weight:normal;height:20px"
+            lable2.style = "font-size:18px;margin-top:-10px;margin-left:40%;font-weight:bold;color:#696969;"
+            lable3.style = "font-weight:normal;font-size:13px;margin-top:-30px;margin-right:3px;color:#696969;text-align: right;"
+            lable1.style = "font-weight:normal"
+            lable1.innerHTML = csvdata[i].name;
+            lable4.innerHTML = csvdata[i].name;
             //button.innerText = csvdata[i].name;
             // lable2.innerHTML = csvdata[i].value + "&nbsp;" + csvdata[i].unit
             lable2.innerHTML = csvdata[i].value
             lable3.innerHTML = csvdata[i].unit
-            document.getElementById('valueGroup').appendChild(createDiv1);
-            //document.getElementById(createDiv1.id).appendChild(createDiv2);
-            //document.getElementById(createDiv2.id).appendChild(lable1);
-            document.getElementById(createDiv1.id).appendChild(button);
-            document.getElementById(button.id).appendChild(lable1)
-            document.getElementById(createDiv1.id).appendChild(lable2);
-            document.getElementById(createDiv1.id).appendChild(lable3);
+            button.innerText = csvdata[i].name;
+            if (csvdata[i].name == "Gross regional product " || csvdata[i].name == "Budget expenditure" || csvdata[i].name == "Number of granted patent") {
+                document.getElementById('valueGroup').appendChild(createDiv1);
+                //document.getElementById(createDiv1.id).appendChild(createDiv2);
+                //document.getElementById(createDiv2.id).appendChild(lable1);
+                document.getElementById(createDiv1.id).appendChild(button);
+                // document.getElementById(button.id).appendChild(lable1)
+                document.getElementById(createDiv1.id).appendChild(lable2);
+                document.getElementById(createDiv1.id).appendChild(lable3);
+            } else {
+                document.getElementById('valueGroup').appendChild(createDiv1);
+                //document.getElementById(createDiv1.id).appendChild(createDiv2);
+                //document.getElementById(createDiv2.id).appendChild(lable1);
+                document.getElementById(createDiv1.id).appendChild(lable4);
+                document.getElementById(createDiv1.id).appendChild(lable2);
+                document.getElementById(createDiv1.id).appendChild(lable3);
+            }
+
 
         }
     })
